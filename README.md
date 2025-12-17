@@ -79,3 +79,51 @@ Terminal 1:
 ./consumer
 ```
 
+## Assignment 1 — CPU Scheduling (FCFS / RR / Priority)
+
+The program builds as assin1_3 and supports both file mode and random mode. 
+Build
+```bash
+cd Assignment1_cpu_scheduling
+gcc -o assin1_3 assin1_3.c
+```
+Run (file mode)
+```bash
+./assin1_3 fcfs file ex5_19.txt
+./assin1_3 rr   file ex5_19.txt 1
+./assin1_3 pri  file ex5_19.txt
+```
+Run (random mode)
+```bash
+./assin1_3 fcfs random 6
+./assin1_3 rr   random 6 2
+```
+
+## Project — Producer/Consumer (Semaphore + Monitor)
+- Semaphore version
+
+Open the code, optionally change the log filename, compile, and run: 
+```bash
+cd Project_semaphore_monitor
+
+# (optional) edit
+vi semaphore.c
+
+# compile
+gcc -Wall -Wextra -O2 semaphore.c -o semaphore -pthread -lm
+
+# if you get clock_gettime link error:
+gcc -Wall -Wextra -O2 pc_semaphore.c -o semaphore -pthread -lm -lrt
+
+# run
+./semaphore
+```
+When running, it will prompt you for buffer size, number of producers, and number of consumers.
+- Monitor version
+
+```bash
+gcc -Wall -Wextra -O2 monitor.c -o monitor -pthread -lm
+./monitor
+
+```
+
